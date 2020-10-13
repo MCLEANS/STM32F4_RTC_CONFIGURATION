@@ -1,6 +1,7 @@
 #include "stm32f4xx.h"
 #include "clockconfig.h"
 #include "NOKIA_5110.h"
+#include "RTC.h"
 #include <stdlib.h>
 
 #define RST_PORT GPIOD

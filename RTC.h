@@ -19,8 +19,16 @@ struct RTC_values{
 class RTC_{
     private:
     private:
+      uint8_t obtain_unit(uint16_t value);
+      uint8_t obtain_tens(uint16_t value);
+      uint8_t BCD_to_decimal(uint8_t val);
+      uint8_t decimal_to_BCD(uint8_t val);
     public:
     public:
+      RTC_();
+      void set_time(RTC_values &rtc_values);
+      RTC_values get_time(void);    
+      ~RTC_();
 
 };
 
