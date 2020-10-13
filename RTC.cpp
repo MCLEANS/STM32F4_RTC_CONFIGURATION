@@ -120,5 +120,8 @@ RTC_values RTC_::get_time(void){
     return rtc_values;
 }
 
+RTC_::~RTC_(){
+    
+}
 
 }
