@@ -8,9 +8,6 @@ RTC_::RTC_(){
     RCC->APB1ENR |= RCC_APB1ENR_PWREN;
     //Enable access to backup domain registers
     PWR->CR |= PWR_CR_DBP;
-    //Reset the backup domain
-    RCC->BDCR |= RCC_BDCR_BDRST;
-    RCC->BDCR &= ~RCC_BDCR_BDRST;
     //Enable the LSI clock
     RCC->CSR |= RCC_CSR_LSION;
     //Wait for LSI to be ready
@@ -38,6 +35,7 @@ uint8_t RTC_::decimal_to_BCD(uint8_t val){
 }
 
 void RTC_::set_time(RTC_values &rtc_values){
+    
     //Disable RTC registers write protection
     RTC->WPR = 0xCA;
     RTC->WPR = 0x53;

@@ -45,15 +45,18 @@ char time_seperator[] = ":";
 
 int main(void) {
   system_clock.initialize();
+
+  /*
   rtc_values.second = 0;
-  rtc_values.minute = 0;
-  rtc_values.hour = 0;
+  rtc_values.minute = 44;
+  rtc_values.hour = 20;
   rtc_values.day_of_week = 2;
   rtc_values.date = 13;
   rtc_values.month = 10;
   rtc_values.year = 20;
 
   rtc.set_time(rtc_values);
+  */
 
   while(1){
     rtc_values = rtc.get_time();
@@ -79,7 +82,7 @@ int main(void) {
     NOKIA.print(time_seperator,55,4);
     NOKIA.print(second,65,4);
 
-    if(rtc_values.second >= 59){
+    if(rtc_values.second  == 59){
       NOKIA.clear();
     }
 
