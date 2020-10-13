@@ -45,6 +45,7 @@ char time_seperator[] = ":";
 
 int main(void) {
   system_clock.initialize();
+  NOKIA.inverted_mode();
 
   /*
   rtc_values.second = 0;
@@ -81,13 +82,10 @@ int main(void) {
     NOKIA.print(minute,40,4);
     NOKIA.print(time_seperator,55,4);
     NOKIA.print(second,65,4);
-
+    //Clear the LCD every minute
     if(rtc_values.second  == 59){
       NOKIA.clear();
     }
-
-
-
 
   }
 }
