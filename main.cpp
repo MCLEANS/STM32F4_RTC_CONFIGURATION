@@ -79,6 +79,10 @@ int main(void) {
     NOKIA.print(time_seperator,55,4);
     NOKIA.print(second,65,4);
 
+    if(rtc_values.second >= 59){
+      NOKIA.clear();
+    }
+
 
 
 
