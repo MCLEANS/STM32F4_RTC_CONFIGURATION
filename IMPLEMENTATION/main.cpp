@@ -70,18 +70,18 @@ int main(void) {
     strcpy(day,(day_of_week[rtc_values.day_of_week-1]).c_str());
 
     //Date
-    NOKIA.print(day,25,1);
-    NOKIA.print(date,10,2);
-    NOKIA.print(date_seperator,25,2);
-    NOKIA.print(month,35,2);
-    NOKIA.print(date_seperator,50,2);
-    NOKIA.print(year,60,2);
+    NOKIA.print(day,15,0);
+    NOKIA.print(date,5,2);
+    NOKIA.print(date_seperator,20,2);
+    NOKIA.print(month,30,2);
+    NOKIA.print(date_seperator,45,2);
+    NOKIA.print(year,55,2);
     //Time
-    NOKIA.print(hour,15,4);
-    NOKIA.print(time_seperator,30,4);
-    NOKIA.print(minute,40,4);
-    NOKIA.print(time_seperator,55,4);
-    NOKIA.print(second,65,4);
+    NOKIA.print(hour,10,4);
+    NOKIA.print(time_seperator,25,4);
+    NOKIA.print(minute,35,4);
+    NOKIA.print(time_seperator,50,4);
+    NOKIA.print(second,60,4);
     //Clear the LCD every minute
     if(rtc_values.second  == 59){
       NOKIA.clear();
