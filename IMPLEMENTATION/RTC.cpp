@@ -8,10 +8,10 @@ RTC_::RTC_(){
     RCC->APB1ENR |= RCC_APB1ENR_PWREN;
     //Enable access to backup domain registers
     PWR->CR |= PWR_CR_DBP;
-    //Enable the LSE clock
-    RCC->BDCR |= RCC_BDCR_LSEON;
-    //Wait for LSE to be ready
-    while(!(RCC->BDCR & RCC_BDCR_LSERDY)){}
+    while ((RCC->BDCR & RCC_BDCR_LSERDY) == 0) {  // wait until LSE starts up
+        //Enable the LSE clock
+        RCC->BDCR = RCC_BDCR_LSEON;  // enable 32.768kHz oscillator
+    }
     //Set RTC clock source to LSE
     RCC->BDCR |= RCC_BDCR_RTCSEL_0;
     //Enable the RTC

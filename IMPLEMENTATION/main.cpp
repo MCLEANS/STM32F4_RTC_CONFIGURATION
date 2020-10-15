@@ -49,10 +49,10 @@ int main(void) {
 
   /*
   rtc_values.second = 0;
-  rtc_values.minute = 44;
-  rtc_values.hour = 20;
-  rtc_values.day_of_week = 2;
-  rtc_values.date = 13;
+  rtc_values.minute = 33;
+  rtc_values.hour = 10;
+  rtc_values.day_of_week = 4;
+  rtc_values.date = 15;
   rtc_values.month = 10;
   rtc_values.year = 20;
 
